@@ -113,8 +113,9 @@
         context.drawImage(img, 0, 0, 224, 224);
         data = context.getImageData(0, 0, 224, 224).data;
         var input = [];
+		console.log(data.length);
         for(var i = 0; i < data.length; i += 1) {
-			if( ((i+1)%4) != 0){
+			if(((i+1)%4) != 0){
 				input.push(data[i] / 125.7 - 1);
 			}
         }
