@@ -113,8 +113,10 @@
         context.drawImage(img, 0, 0, 224, 224);
         data = context.getImageData(0, 0, 224, 224).data;
         var input = [];
-        for(var i = 0; i < data.length; i += 4) {
-          input.push(data[i + 2] / 125.7 - 1);
+        for(var i = 0; i < data.length; i += 1) {
+			if( ((i+1)%4) != 0){
+				input.push(data[i] / 125.7 - 1);
+			}
         }
         predict(input);
       };
