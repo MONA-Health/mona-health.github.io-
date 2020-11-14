@@ -70,6 +70,7 @@ async function predButton() {
 	document.getElementById("predict-box").style.display = "block";
 	document.getElementById("prediction").innerHTML = "MobileNet prediction <br><b>" + results.toString() + "</b>";
 
+	/*
 	var ul = document.getElementById("predict-list");
 	ul.innerHTML = "";
 	results.forEach(function (p) {
@@ -78,7 +79,7 @@ async function predButton() {
 		li.innerHTML = p.className + " " + p.probability.toFixed(6);
 		ul.appendChild(li);
 	});
-
+	*/
 }
 
 function preprocessImage(image, modelName) {
