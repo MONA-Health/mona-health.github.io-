@@ -155,7 +155,8 @@
     var predict = function(input) {
       if (window.model) {
         window.model.predict([tf.tensor(input).reshape([1, 224, 224, 3])]).array().then(function(scores){
-          scores = scores[0];
+          console.log(scores)
+		  scores = scores[0];
 		  console.log(scores)
           predicted = scores.indexOf(Math.max(...scores));
           $('#number').html(predicted);
