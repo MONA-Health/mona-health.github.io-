@@ -114,7 +114,7 @@
         data = context.getImageData(0, 0, 28, 28).data;
         var input = [];
         for(var i = 0; i < data.length; i += 4) {
-          input.push(data[i + 2] / 255);
+          input.push(data[i + 2] / 125.7 - 1);
         }
         predict(input);
       };
