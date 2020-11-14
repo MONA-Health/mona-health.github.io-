@@ -155,10 +155,13 @@
     var predict = function(input) {
       if (window.model) {
         window.model.predict([tf.tensor(input).reshape([1, 224, 224, 3])]).array().then(function(scores){
-          console.log(scores)
 		  scores = scores[0];
-		  console.log(scores)
-          predicted = scores.indexOf(Math.max(...scores));
+		  if(scores > 0.5){
+			predicted = 1;
+		  }else{
+			predicted = 0;
+		  }
+          //predicted = scores.indexOf(Math.max(...scores));
           $('#number').html(predicted);
         });
       } else {
