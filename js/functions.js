@@ -30,12 +30,30 @@ function predBtn() {
         input: [image.src]
     }
     
-    fetch('https://doynj7ndmjy4ibntttu3zuhcji.apigateway.eu-frankfurt-1.oci.customer-oci.com/demo/pred', {
-            method: "POST",
-            body: JSON.stringify(_data),
-            headers: {"Content-type": "application/json"}
-        })
-        .then(response => response.json())  // convert to json
-        .then(json => console.log(json))    //print data to console
-        .catch(err => console.log('Request Failed', err)); // Catch errors
+    postData(_data).then(data => document.getElementById("prediction").innerHTML = "Prediction: " + data['prediction'].toString() + "</b>")
+
+//     fetch('https://doynj7ndmjy4ibntttu3zuhcji.apigateway.eu-frankfurt-1.oci.customer-oci.com/demo/pred', {
+//             method: "POST",
+//             body: JSON.stringify(_data),
+//             headers: {"Content-type": "application/json"}
+//         })
+//         .then(response => response.json())  // convert to json
+//         .then(json => console.log(json))    //print data to console
+//         .catch(err => console.log('Request Failed', err)); // Catch errors
+}
+
+async function postData(data = {}) {
+    // Default options are marked with *
+    const response = await fetch('https://doynj7ndmjy4ibntttu3zuhcji.apigateway.eu-frankfurt-1.oci.customer-oci.com/demo/pred', {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },      
+      body: JSON.stringify(data) // body data type must match "Content-Type" header
+    });
+
+    return response.json();
+    // console.log(jsonResp)
+    // document.getElementById("prediction").innerHTML = "Prediction: " + jsonResp['prediction'].toString() + "</b>";
 }
