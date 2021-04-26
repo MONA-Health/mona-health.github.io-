@@ -110,8 +110,8 @@ body {
   grid-template-columns: 1fr 1fr;
   -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;  
-  backdrop-filter: blur(21px);
-  -webkit-backdrop-filter: blur(21px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
 }
 
 .text-block-2 {
