@@ -41,8 +41,9 @@ function showPredBtn() {
 function showResult(data) {
     document.getElementById("resultTxt").style.display = "flex";
 	document.getElementById("slider").style.display = "flex";
-	document.getElementById("sliderTxt").innerHTML = data['prediction'].toString();
-	var pos = data['prediction']/4*95	
+	var prediction = Math.round( data['prediction']. * 100 + Number.EPSILON ) / 100
+	document.getElementById("sliderTxt").innerHTML = prediction.toString();
+	var pos = prediction/4*95	
 	document.getElementById("sliderControl").style.left = pos.toString() + "%";
 	document.getElementById("prediction").innerHTML = "Prediction: " + data['prediction'].toString() + "</b>"
 	
