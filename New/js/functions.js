@@ -38,6 +38,16 @@ function showPredBtn() {
     document.getElementById("predBtn").style.display = "flex";
 }
 
+function showResult(data) {
+    document.getElementById("resultTxt").style.display = "flex";
+	document.getElementById("slider").style.display = "flex";
+	document.getElementById("sliderTxt").innerHTML = data['prediction'].toString();
+	var pos = data['prediction']/4*95	
+	document.getElementById("sliderControl").style.left = pos.toString() + "%";
+	document.getElementById("prediction").innerHTML = "Prediction: " + data['prediction'].toString() + "</b>"
+	
+}
+
 function predBtn() {
     let image  = document.getElementById("test-image");
     console.log('xxxx')
@@ -46,8 +56,8 @@ function predBtn() {
     let _data = {
         input: [image.src]
     }
-    
-    postData(_data).then(data => document.getElementById("prediction").innerHTML = "Prediction: " + data['prediction'].toString() + "</b>")
+    	
+    postData(_data).then(data => showResult(data))
 
 //     fetch('https://doynj7ndmjy4ibntttu3zuhcji.apigateway.eu-frankfurt-1.oci.customer-oci.com/demo/pred', {
 //             method: "POST",

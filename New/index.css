@@ -533,7 +533,22 @@ body {
   -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
   border-radius: 20px;
-  background-color: #e53054;
+  background-color: rgb(137, 255, 110);
+}
+
+.text-block-5-copy {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #000;
+  font-weight: 700;
+  text-align: center;
 }
 
 .div-block-19-copy {
