@@ -95,8 +95,12 @@ body {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
-  height: 900px;
+  display: flex;  
+  height: 100%;
+  width: 100%; 
+  position:absolute;
+  left:0;
+  right:0;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
