@@ -21,27 +21,31 @@
 					<div class="text-block-2">Welcome to the MONA Demo application</div>
 					<div class="text-block-3">Small intro text about what the user can expect and what the purpose is</div>
 					<div class="div-block-4">
-						<div class="div-block-5">
+						<div id='dot_top' class="div-block-5">
 							<div class="text-block-5">1</div>
 						</div>
 						<div class="text-block-4">Upload a retinal image</div>
 					</div>
-					<div class="div-block-7">
-						<div class="div-block-6" onclick="loadFile(event)">
-							<input id="select-file-image" type="file"  style="display: none">
+					<div class="div-block-7" id='uploadBtn'>
+						<div class="div-block-6" onclick="document.getElementById('select-file-image').click();">
+							<input id="select-file-image" type="file" onchange="loadFile(event)" style="display: none">
 							<img src="./upload.svg" loading="eager" alt="" class="image-5"/>
 							<div class="text-block-6">UPLOAD IMAGE</div>
 						</div>
 					</div>
-					<div class="div-block-8">
+					<div class="div-block-8" id='reqDiv'>
 						<div class="text-block-7">Image requirements:<br/>Fundus image<br/>Image size: &lt;5MB<br/>...</div>
 					</div>
-					<div class="div-block-19">
+					<div id='imgDiv' class="div-img" style="display: none">
+						<img id='test-image' style="height:400px;"/>
+					</div>
+					<div id='predBtn' class="div-block-19" style="display: none" onclick="predBtn();">
 						<div class="div-block-20">
 							<div class="text-block-6">Predict</div>
 						</div>
-					</div>
-					<div class="div-block-21">
+					</div>	
+					<h1 id="prediction"></h1>					
+					<div class="div-block-21" style="display: none">
 						<div class="div-block-4-copy">
 							<div class="div-block-5-copy">
 								<div class="text-block-5">1</div>
@@ -49,7 +53,7 @@
 							<div class="text-block-4">Result</div>
 						</div>
 					</div>
-					<div class="div-block-16" style="display: ;">
+					<div class="div-block-16" style="display: none;">
 						<div class="div-block-17">
 							<img src="./scale.svg" loading="eager" alt="" class="image-8"/>
 							<div class="div-block-18">
@@ -58,7 +62,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="div-block-19-copy">
+					<div class="div-block-19-copy" style="display: none">
 						<div class="div-block-20">
 							<div class="text-block-6">Reset</div>
 						</div>

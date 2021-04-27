@@ -4,6 +4,23 @@ async function loadFile() {
   	console.log(fileInputElement.files[0]);
     renderImage(fileInputElement.files[0]);
     showPredBtn();
+	showImgDiv();
+	hideUploadAndReq();
+	changeDotToGreen();
+}
+
+function changeDotToGreen() {
+    document.getElementById("dot_top").style.backgroundColor = "rgb(137, 255, 110)";
+	document.getElementById("dot_top").innerHTML = "&#10004;";
+}
+
+function showImgDiv() {
+    document.getElementById("imgDiv").style.display = "flex";
+}
+
+function hideUploadAndReq() {
+    document.getElementById("uploadBtn").style.display = "none";
+	document.getElementById("reqDiv").style.display = "none";
 }
 
 function renderImage(file) {
@@ -18,7 +35,7 @@ function renderImage(file) {
 }
 
 function showPredBtn() {
-    document.getElementById("predBtn").style.display = "inline";
+    document.getElementById("predBtn").style.display = "flex";
 }
 
 function predBtn() {
