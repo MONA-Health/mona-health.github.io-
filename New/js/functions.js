@@ -41,12 +41,12 @@ function showPredBtn() {
 function showResult(data) {
     document.getElementById("resultTxt").style.display = "flex";
 	document.getElementById("slider").style.display = "flex";
-	var prediction = Math.round( data['prediction'] * 10 + Number.EPSILON ) / 10
+	var prediction = Math.round( data['prediction'] * 10 + Number.EPSILON ) / 10;
 	document.getElementById("sliderTxt").innerHTML = prediction.toString();
-	var pos = data['prediction']/4*95	
+	var pos = prediction/4*95;
 	document.getElementById("sliderControl").style.left = pos.toString() + "%";
-	document.getElementById("prediction").innerHTML = "Prediction: " + data['prediction'].toString() + "</b>"
-	
+	var unrounded = Math.round( data['prediction'] * 10000 + Number.EPSILON ) / 10000;
+	document.getElementById("fullResult").innerHTML = unrounded.toString();
 }
 
 function predBtn() {
