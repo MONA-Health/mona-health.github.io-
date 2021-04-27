@@ -246,6 +246,14 @@ body {
   background-color: #e53054;
 }
 
+
+.div-block-6:hover{
+    color: #333;
+    background-color: #b8304b;
+    border-color: #adadad;
+}
+
+
 .div-block-7 {
   display: -webkit-box;
   display: -webkit-flex;
