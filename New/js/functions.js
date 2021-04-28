@@ -52,6 +52,7 @@ function showPredBtn() {
 function showResults(dataL, dataR) {
 	showResultL(dataL);
 	showResultR(dataR);
+	stopLoad();
 	document.getElementById("predBtn").style.display = "none";
 }
 
@@ -79,7 +80,18 @@ function showResultR(data) {
 	document.getElementById("fullResult").innerHTML = unrounded.toString();
 }
 
+function startLoad() {
+	document.getElementById("content").style.display = "none";
+	document.getElementById("loader").style.display = "flex";
+}
+
+function stopLoad() {
+	document.getElementById("content").style.display = "block";
+	document.getElementById("loader").style.display = "none";
+}
+
 async function predBtn() {
+	startLoad();
     let image  = document.getElementById("test-image-1");
 	let image2  = document.getElementById("test-image-2");
     //console.log('xxxx')
@@ -95,7 +107,7 @@ async function predBtn() {
     	
 	let [data1, data2] = await Promise.all([postData(_data), postData(_data2)]);	
 	
-	showResults(data1, data2)
+	showResults(data1, data2);
 
 //     fetch('https://doynj7ndmjy4ibntttu3zuhcji.apigateway.eu-frankfurt-1.oci.customer-oci.com/demo/pred', {
 //             method: "POST",
