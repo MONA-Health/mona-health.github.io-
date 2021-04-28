@@ -52,6 +52,7 @@ function showPredBtn() {
 function showResults(dataL, dataR) {
 	showResultL(dataL);
 	showResultR(dataR);
+	document.getElementById("predBtn").style.display = "none";
 }
 
 function showResultL(data) {
