@@ -24,11 +24,16 @@
 						<div id='dot_top' class="div-block-5">
 							<div class="text-block-5">1</div>
 						</div>
-						<div class="text-block-4">Upload a retinal image</div>
+						<div class="text-block-4">Upload retinal images</div>
 					</div>
 					<div class="div-block-7" id='uploadBtn'>
 						<div class="div-block-6" onclick="document.getElementById('select-file-image').click();">
-							<input id="select-file-image" type="file" onchange="loadFile(event)" style="display: none">
+							<input id="select-file-image" type="file" onchange="loadFileLeft(event)" style="display: none">
+							<img src="./upload.svg" loading="eager" alt="" class="image-5"/>
+							<div class="text-block-6">UPLOAD IMAGE</div>
+						</div>
+						<div class="div-block-6" onclick="document.getElementById('select-file-image-2').click();">
+							<input id="select-file-image-2" type="file" onchange="loadFileRight(event)" style="display: none">
 							<img src="./upload.svg" loading="eager" alt="" class="image-5"/>
 							<div class="text-block-6">UPLOAD IMAGE</div>
 						</div>
@@ -37,7 +42,8 @@
 						<div class="text-block-7">Image requirements:<br/>Fundus image<br/>Image size: &lt;5MB<br/>...</div>
 					</div>
 					<div id='imgDiv' class="div-img" style="display: none">
-						<img id='test-image' style="height:400px;"/>
+						<img id='test-image-1' style="height:400px; margin-left: 25px; margin-right: 25px;"/>
+						<img id='test-image-2' style="height:400px; margin-left: 25px; margin-right: 25px;"/>
 					</div>
 					<div id='predBtn' class="div-block-19" style="display: none" onclick="predBtn();">
 						<div class="div-block-20">
@@ -52,17 +58,24 @@
 							<div class="text-block-4">Result</div>
 						</div>
 					</div>
-					<div id='slider' class="div-block-16" style="display: none;">
-						<div class="div-block-17">
+					<div  class="div-block-16" >
+						<div id='sliderL' class="div-block-17" style="display: none;">
 							<img src="./scale.svg" loading="eager" alt="" class="image-8"/>
-							<div id='sliderControl' class="div-block-18">
-								<div id='sliderTxt' class="text-block-9">1.2</div>
+							<div id='sliderControlL' class="div-block-18">
+								<div id='sliderTxtL' class="text-block-9">1.2</div>
+								<img src="./marker.svg" loading="eager" alt="" class="image-9"/>
+							</div>
+						</div>
+						<div id='sliderR' class="div-block-17" style="display: none;">
+							<img src="./scale.svg" loading="eager" alt="" class="image-8"/>
+							<div id='sliderControlR' class="div-block-18">
+								<div id='sliderTxtR' class="text-block-9">1.2</div>
 								<img src="./marker.svg" loading="eager" alt="" class="image-9"/>
 							</div>
 						</div>
 					</div>
 					<div id='fullResult' class="text-block-3"></div>
-					<div class="div-block-19-copy" style="display: none">
+					<div id='resetBtn' class="div-block-19-copy" style="display: none">
 						<div class="div-block-20">
 							<div class="text-block-6">Reset</div>
 						</div>
