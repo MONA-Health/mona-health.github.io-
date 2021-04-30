@@ -138,6 +138,14 @@ body {
   text-align: center;
 }
 
+.text-block-3-copy {
+  margin-top: 55px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+}
+
 .div-block-3 {
   position: relative;
   width: 100%;
@@ -184,7 +192,7 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 95px;
+  margin-top: 50px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -246,7 +254,7 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 155px;
+  width: 200px;
   height: 35px;
   margin-left: 25px;
   margin-right: 25px;
@@ -557,6 +565,8 @@ body {
   color: #000;
   font-weight: 700;
   text-align: center;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .div-block-19-copy {
@@ -564,7 +574,8 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 22px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;

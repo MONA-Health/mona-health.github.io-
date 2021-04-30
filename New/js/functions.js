@@ -3,7 +3,7 @@ async function loadFileLeft() {
   	var fileInputElement = document.getElementById("select-file-image");
   	console.log(fileInputElement.files[0]);
     renderImage(fileInputElement.files[0], 'test-image-1');
-    showPredBtn();
+    //showPredBtn();
 	showImgDiv();
 	//hideUploadAndReq();
 	//changeDotToGreen();
@@ -22,7 +22,10 @@ async function loadFileRight() {
 
 function changeDotToGreen() {
     document.getElementById("dot_top").style.backgroundColor = "rgb(137, 255, 110)";
-	document.getElementById("dot_top").innerHTML = "&#10004;";
+	document.getElementById("dot_topTxt").innerHTML = "&#10004;";
+	document.getElementById("dot_topTxt").style.color = "#000";
+	document.getElementById("dot_topTxt").style.fontSize = "16px";
+	document.getElementById("dot_topTxt").style.lineHeight = "20px";
 }
 
 function showImgDiv() {
@@ -54,6 +57,19 @@ function showResults(dataL, dataR) {
 	showResultR(dataR);
 	stopLoad();
 	document.getElementById("predBtn").style.display = "none";
+	
+	var unroundedL = Math.round( dataL['prediction'] * 1000 + Number.EPSILON ) / 1000;
+	var unroundedR = Math.round( dataR['prediction'] * 1000 + Number.EPSILON ) / 1000;
+	
+	if ((dataL['prediction'] >= 1.371) && (dataR['prediction'] >= 1.371)) {
+		document.getElementById("fullResult").innerHTML = "Both values (L: " + unroundedL.toString() + "; R: " + unroundedR.toString() + ") are above our threshold of 1.371, the patient wil be <u>referred</u>! ";
+	} else if ((dataL['prediction'] >= 1.371) && (dataR['prediction'] <= 1.371)){
+		document.getElementById("fullResult").innerHTML = "The value for the left eye (" + unroundedL.toString() + ") is above our threshold of 1.371, the patient wil be <u>referred</u>! ";
+	} else if ((dataL['prediction'] <= 1.371) && (dataR['prediction'] >= 1.371)){
+		document.getElementById("fullResult").innerHTML = "The value for the right eye (" + unroundedR.toString() + ") is above our threshold of 1.371, the patient wil be <u>referred</u>!";
+	} else {
+		document.getElementById("fullResult").innerHTML = "Both values (L: " + unroundedL.toString() + "; R: " + unroundedR.toString() + ") are beneath our threshold of 1.371, the patient wil <u>not</u>  be referred!";
+	}	
 }
 
 function showResultL(data) {
@@ -64,9 +80,9 @@ function showResultL(data) {
 	document.getElementById("sliderTxtL").innerHTML = prediction.toString();
 	var pos = prediction/4*95;
 	document.getElementById("sliderControlL").style.left = pos.toString() + "%";
-	var unrounded = Math.round( data['prediction'] * 10000 + Number.EPSILON ) / 10000;
+	var unrounded = Math.round( data['prediction'] * 1000 + Number.EPSILON ) / 1000;
 	console.log('L:' + unrounded.toString());
-	document.getElementById("fullResult").innerHTML = unrounded.toString();
+	//document.getElementById("fullResult").innerHTML = unrounded.toString();
 }
 
 function showResultR(data) {
@@ -75,9 +91,9 @@ function showResultR(data) {
 	document.getElementById("sliderTxtR").innerHTML = prediction.toString();
 	var pos = prediction/4*95;
 	document.getElementById("sliderControlR").style.left = pos.toString() + "%";
-	var unrounded = Math.round( data['prediction'] * 10000 + Number.EPSILON ) / 10000;
+	var unrounded = Math.round( data['prediction'] * 1000 + Number.EPSILON ) / 1000;
 	console.log('L:' + unrounded.toString());
-	document.getElementById("fullResult").innerHTML = unrounded.toString();
+	//document.getElementById("fullResult").innerHTML = unrounded.toString();
 }
 
 function startLoad() {
