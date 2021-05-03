@@ -151,3 +151,19 @@ async function postData(data = {}) {
     // console.log(jsonResp)
     // document.getElementById("prediction").innerHTML = "Prediction: " + jsonResp['prediction'].toString() + "</b>";
 }
+
+async function prime() {
+    // Default options are marked with *
+    const response = await fetch('https://doynj7ndmjy4ibntttu3zuhcji.apigateway.eu-frankfurt-1.oci.customer-oci.com/demo/pred', {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },      
+      body: JSON.stringify({input: ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAgCAMAAACvkzHFAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAZ5QTFRFAAAA5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5C5T5S9S5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5C5R5i9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S5S5C9U5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9U5S9T5S9T5S9T5i5T5S9T5S9T6C5V5y1U5S9T5S9S5S9T5S9T5S9T5S9T5i5U5TBT5S9T5S9T5S9T5S9T5S9T5S9T5i9T5S9T5S9T5S9S5S9T5S9T5TBU5i9T5S9T5S9T5SxP5S9T5S9T5S9T5S9T5S9U5i9S5S5T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5S9T5i9T5i9T5S9T5S9T5C9S5TBS5S9T5S9T5S9S5S5T5S5T5S9T5S9T5S9T5DBT5DBU5S9T5S9T5S9T5S9T5S9T5S9T5TBU5i9T5S9T5S9T5S9T5i5TshOvjwAAAIp0Uk5TAEevwTJFz541G53z/+JNAwhp7u2AD0zk+48LGbP90jNQ8sclQN/rO2f+96z4QVPbnGtLT3Om3AvhdhMfjsgEBKIRIHI0nwoUueUakKgHE9dkF9roHTb2uwNX/H6qLhM6ZsC+lZO6p7iSveM4eucbM/WkBhHTmwkRDx3ecQ8biZZJbaDwQFdEIYUUi9qoewAAAYxJREFUeJyNlGVXAkEUhq8iBg4WqKigYlCKYq2Fgd2YIFjY3d2K/a+FiQ128Xi/7Lx3nj0ztwaAWUKiKokX6uSUVIi1NE06QtqMTCyysnMQ0ulzpUhePoqaoaAwIoqMJqyKS8RIqRlRKyuHikomLFYBsdkRb44qgyCqnQyp0VGXqdZVV+9saGzSMoijxzVz1NHS2kb/anez3zo6o7rLRWW3R3TDHhX19kZVn4OI/gFJpINDxD08EhGjZD02HpOxCS/ZmASYmsarmVlZWud8eMc/D4EgXi3IEIBFkqQlcOOFeVmBWcFps4dgFTNrCggAKdA6FOPvhiKzSaIBklK9IrOF97b/xZCzdv48i9x5V5HZo3emsXsUkH0WO83hQdzrRHJIa3F4JEOOT1gtWE1Pz2KQ8wu+pnxvXF5JkGujqDf4HtPciJBbv7jHhF69u3+gxOOThfpIr4p6Puh9DqmtL69hfno4fsRsSLA4swMQ8DGvZAbf3sVRfJDjpLPMfUqz8RWWvQnfP7K0xn9bfgE3yUjozJrnnAAAAABJRU5ErkJggg=="]) // body data type must match "Content-Type" header
+    });
+
+    return response.json();
+    // console.log(jsonResp)
+    // document.getElementById("prediction").innerHTML = "Prediction: " + jsonResp['prediction'].toString() + "</b>";
+}
