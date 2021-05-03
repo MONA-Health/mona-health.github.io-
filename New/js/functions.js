@@ -18,6 +18,7 @@ async function loadFileRight() {
 	showImgDiv();
 	hideUploadAndReq();
 	changeDotToGreen();
+	//document.getElementById("test-image-1").style.marginRight = "25px";
 }
 
 function changeDotToGreen() {
@@ -62,13 +63,13 @@ function showResults(dataL, dataR) {
 	var unroundedR = Math.round( dataR['prediction'] * 1000 + Number.EPSILON ) / 1000;
 	
 	if ((dataL['prediction'] >= 1.371) && (dataR['prediction'] >= 1.371)) {
-		document.getElementById("fullResult").innerHTML = "Both values (L: " + unroundedL.toString() + "; R: " + unroundedR.toString() + ") are above our threshold of 1.371, the patient wil be <u>referred</u>! ";
+		document.getElementById("fullResult").innerHTML = "<h3>Referable DR detected!</h3><p>Both values (L: " + unroundedL.toString() + "; R: " + unroundedR.toString() + ") are above our threshold of 1.371, the patient wil be <u>referred</u>! </p>";
 	} else if ((dataL['prediction'] >= 1.371) && (dataR['prediction'] <= 1.371)){
-		document.getElementById("fullResult").innerHTML = "The value for the left eye (" + unroundedL.toString() + ") is above our threshold of 1.371, the patient wil be <u>referred</u>! ";
+		document.getElementById("fullResult").innerHTML = "<h3>Referable DR detected!</h3><p>The value for the left eye (" + unroundedL.toString() + ") is above our threshold of 1.371, the patient wil be <u>referred</u>! </p>";
 	} else if ((dataL['prediction'] <= 1.371) && (dataR['prediction'] >= 1.371)){
-		document.getElementById("fullResult").innerHTML = "The value for the right eye (" + unroundedR.toString() + ") is above our threshold of 1.371, the patient wil be <u>referred</u>!";
+		document.getElementById("fullResult").innerHTML = "<h3>Referable DR detected!</h3><p>The value for the right eye (" + unroundedR.toString() + ") is above our threshold of 1.371, the patient wil be <u>referred</u>!</p>";
 	} else {
-		document.getElementById("fullResult").innerHTML = "Both values (L: " + unroundedL.toString() + "; R: " + unroundedR.toString() + ") are beneath our threshold of 1.371, the patient wil <u>not</u>  be referred!";
+		document.getElementById("fullResult").innerHTML = "<h3>No referable DR detected!</h3><p>Both values (L: " + unroundedL.toString() + "; R: " + unroundedR.toString() + ") are beneath our threshold of 1.371, the patient wil <u>not</u>  be referred!</p>";
 	}	
 }
 

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>MONA Demo Application</title>
+		<title>MONA DR SCREENING demo</title>
 		<meta content="width=device-width, initial-scale=1" name="viewport"/>
 		<meta content="Webflow" name="generator"/>
 		<link rel="icon" href="./favicon.png">
@@ -13,13 +13,13 @@
 	<body class="body">
 		<div class="section">
 			<img src="./mona.svg" loading="eager" height="54" alt="" class="image-4"/>
-			<div class="text-block">Demo application</div>
+			<div class="text-block">DR SCREENING demo</div>
 		</div>
 		<div class="container-2 w-container">
 			<div class="div-block-2">
 				<div id='content' class="div-block-3">
-					<div class="text-block-2">Welcome to the MONA Demo application</div>
-					<div class="text-block-3">On this website you can make a DR prediction for both eyes of a patient. Please upload the left eye first. </div>
+					<div class="text-block-2">Welcome to the MONA DR SCREENING demo application</div>
+					<div class="text-block-3">With MONA DR you can screen both eyes of the patient for signs of Diabetic Retinopathy. Please upload the left eye first. </div>
 					<div class="div-block-4">
 						<div id='dot_top' class="div-block-5">
 							<div id='dot_topTxt' class="text-block-5">1</div>
@@ -42,8 +42,12 @@
 						<div class="text-block-7">Image requirements:<br/>Fundus image<br/>Image size: &lt;5MB</div>
 					</div>
 					<div id='imgDiv' class="div-img" style="display: none">
-						<img id='test-image-1' style="height:400px; margin-left: 25px; margin-right: 25px;"/>
-						<img id='test-image-2' style="height:400px; margin-left: 25px; margin-right: 25px;"/>
+						<div style="display: inline-block; min-width:400px; margin-left: 25px; margin-right: 25px;">
+							<img id='test-image-1' style="height:400px; margin-left: 25px; margin-right: 25px;"/>
+						</div>
+						<div style="display: inline-block; min-width:400px; margin-left: 25px; margin-right: 25px;">
+							<img id='test-image-2' style="height:400px; margin-left: 25px; margin-right: 25px;"/>
+						</div>	
 					</div>
 					<div id='predBtn' class="div-block-19" style="display: none" onclick="predBtn();">
 						<div class="div-block-20">
