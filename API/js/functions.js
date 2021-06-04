@@ -115,14 +115,15 @@ async function predBtn() {
     //console.log(image)
 
     let _data = {
-        input: [image.src]
+        image: image.src
     }
 	
 	let _data2 = {
-        input: [image2.src]
+        image: image2.src
     }
     	
 	let [data1, data2] = await Promise.all([postData(_data), postData(_data2)]);	
+	console.log(data1)
 	
 	showResults(data1, data2);
 
@@ -138,7 +139,7 @@ async function predBtn() {
 
 async function postData(data = {}) {
     // Default options are marked with *
-    const response = await fetch('https://doynj7ndmjy4ibntttu3zuhcji.apigateway.eu-frankfurt-1.oci.customer-oci.com/demo/pred', {
+    const response = await fetch('https://3.64.254.185', {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json'
