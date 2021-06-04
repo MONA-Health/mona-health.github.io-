@@ -115,11 +115,11 @@ async function predBtn() {
     //console.log(image)
 
     let _data = {
-        image: image.src
+        'instances': image.src
     }
 	
 	let _data2 = {
-        image: image2.src
+        'instances': image2.src
     }
     	
 	let [data1, data2] = await Promise.all([postData(_data), postData(_data2)]);	
