@@ -59,14 +59,14 @@ function showResults(dataL, dataR) {
 	stopLoad();
 	document.getElementById("predBtn").style.display = "none";
 	
-	var unroundedL = Math.round( dataL['prediction'] * 1000 + Number.EPSILON ) / 1000;
-	var unroundedR = Math.round( dataR['prediction'] * 1000 + Number.EPSILON ) / 1000;
+	var unroundedL = Math.round( dataL['dr_raw'] * 1000 + Number.EPSILON ) / 1000;
+	var unroundedR = Math.round( dataR['dr_raw'] * 1000 + Number.EPSILON ) / 1000;
 	
-	if ((dataL['prediction'] >= 1.371) && (dataR['prediction'] >= 1.371)) {
+	if ((dataL['dr_raw'] >= 1.371) && (dataR['dr_raw'] >= 1.371)) {
 		document.getElementById("fullResult").innerHTML = "<h3>Referable DR detected!</h3><p>Both values (L: " + unroundedL.toString() + "; R: " + unroundedR.toString() + ") are above our threshold of 1.371, the patient wil be <u>referred</u>! </p>";
-	} else if ((dataL['prediction'] >= 1.371) && (dataR['prediction'] <= 1.371)){
+	} else if ((dataL['dr_raw'] >= 1.371) && (dataR['dr_raw'] <= 1.371)){
 		document.getElementById("fullResult").innerHTML = "<h3>Referable DR detected!</h3><p>The value for the left eye (" + unroundedL.toString() + ") is above our threshold of 1.371, the patient wil be <u>referred</u>! </p>";
-	} else if ((dataL['prediction'] <= 1.371) && (dataR['prediction'] >= 1.371)){
+	} else if ((dataL['dr_raw'] <= 1.371) && (dataR['dr_raw'] >= 1.371)){
 		document.getElementById("fullResult").innerHTML = "<h3>Referable DR detected!</h3><p>The value for the right eye (" + unroundedR.toString() + ") is above our threshold of 1.371, the patient wil be <u>referred</u>!</p>";
 	} else {
 		document.getElementById("fullResult").innerHTML = "<h3>No referable DR detected!</h3><p>Both values (L: " + unroundedL.toString() + "; R: " + unroundedR.toString() + ") are beneath our threshold of 1.371, the patient wil <u>not</u>  be referred!</p>";
@@ -77,22 +77,22 @@ function showResultL(data) {
     document.getElementById("resultTxt").style.display = "flex";
 	document.getElementById("sliderL").style.display = "flex";
 	document.getElementById("resetBtn").style.display = "flex";
-	var prediction = Math.round( data['prediction'] * 10 + Number.EPSILON ) / 10;
-	document.getElementById("sliderTxtL").innerHTML = prediction.toString();
-	var pos = prediction/4*95;
+	var dr_raw = Math.round( data['dr_raw'] * 10 + Number.EPSILON ) / 10;
+	document.getElementById("sliderTxtL").innerHTML = dr_raw.toString();
+	var pos = dr_raw/4*95;
 	document.getElementById("sliderControlL").style.left = pos.toString() + "%";
-	var unrounded = Math.round( data['prediction'] * 1000 + Number.EPSILON ) / 1000;
+	var unrounded = Math.round( data['dr_raw'] * 1000 + Number.EPSILON ) / 1000;
 	console.log('L:' + unrounded.toString());
 	//document.getElementById("fullResult").innerHTML = unrounded.toString();
 }
 
 function showResultR(data) {
 	document.getElementById("sliderR").style.display = "flex";
-	var prediction = Math.round( data['prediction'] * 10 + Number.EPSILON ) / 10;
-	document.getElementById("sliderTxtR").innerHTML = prediction.toString();
-	var pos = prediction/4*95;
+	var dr_raw = Math.round( data['dr_raw'] * 10 + Number.EPSILON ) / 10;
+	document.getElementById("sliderTxtR").innerHTML = dr_raw.toString();
+	var pos = dr_raw/4*95;
 	document.getElementById("sliderControlR").style.left = pos.toString() + "%";
-	var unrounded = Math.round( data['prediction'] * 1000 + Number.EPSILON ) / 1000;
+	var unrounded = Math.round( data['dr_raw'] * 1000 + Number.EPSILON ) / 1000;
 	console.log('L:' + unrounded.toString());
 	//document.getElementById("fullResult").innerHTML = unrounded.toString();
 }
