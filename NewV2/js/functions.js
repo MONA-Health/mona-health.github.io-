@@ -69,7 +69,7 @@ function showResults(dataL, dataR) {
 	} else if ((dataL['dr_raw'] <= 1.371) && (dataR['dr_raw'] >= 1.371)){
 		document.getElementById("fullResult").innerHTML = "<h3>Referable DR detected!</h3><p>The value for the right eye (" + unroundedR.toString() + ") is above our threshold of 1.371, the patient wil be <u>referred</u>!</p>";
 	} else {
-		document.getElementById("fullResult").innerHTML = "<h3>No referable DR detected!</h3><p>Both values (L: " + unroundedL.toString() + "; R: " + unroundedR.toString() + ") are beneath our threshold of 1.371, the patient wil <u>not</u>  be referred!</p>";
+		document.getElementById("fullResult").innerHTML = "<h3>No referable DR detected!</h3><p>Both values (L: " + unroundedL.toString() + "; R: " + unroundedR.toString() + ") are beneath our threshold of 1.371, the patient wil <u>not</u>  be referred for DR!</p>";
 	}	
 	
 	var unroundedLDME = Math.round( dataL['dme_raw'] * 1000 + Number.EPSILON ) / 1000;
@@ -82,7 +82,7 @@ function showResults(dataL, dataR) {
 	} else if ((dataL['dme_raw'] <= 0.38) && (dataR['dme_raw'] >= 0.38)){
 		document.getElementById("fullResultDME").innerHTML = "<h3>Referable DME detected!</h3><p>The value for the right eye (" + unroundedRDME.toString() + ") is above our threshold of 0.38, the patient wil be <u>referred</u>!</p>";
 	} else {
-		document.getElementById("fullResultDME").innerHTML = "<h3>No referable DME detected!</h3><p>Both values (L: " + unroundedLDME.toString() + "; R: " + unroundedRDME.toString() + ") are beneath our threshold of 0.38, the patient wil <u>not</u>  be referred!</p>";
+		document.getElementById("fullResultDME").innerHTML = "<h3>No referable DME detected!</h3><p>Both values (L: " + unroundedLDME.toString() + "; R: " + unroundedRDME.toString() + ") are beneath our threshold of 0.38, the patient wil <u>not</u>  be referred for DME!</p>";
 	}
 }
 
