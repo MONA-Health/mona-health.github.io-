@@ -138,8 +138,9 @@ async function predBtn() {
 }
 
 async function postData(data = {}) {
+
     // Default options are marked with *
-    const response = await fetch('https://3.64.254.185', {
+    const response = await fetch('http://3.64.254.185:8080', {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json'
