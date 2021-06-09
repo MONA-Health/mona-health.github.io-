@@ -170,7 +170,8 @@ async function postData(data = {}) {
       body: JSON.stringify(data) // body data type must match "Content-Type" header
     });
 	
-	var respJson = response.json()
+	var respJson = response.json();
+	console.log(respJson);
 	
 	if (response.status == 400){ 
 		document.getElementById("error").innerHTML = respJson['message'];
