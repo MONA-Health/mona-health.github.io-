@@ -150,6 +150,15 @@ async function predBtn() {
 //         .catch(err => console.log('Request Failed', err)); // Catch errors
 }
 
+function toggle_about() {
+	var x = document.getElementById("about");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+		} else {
+		x.style.display = "none";
+	}
+} 
+
 async function postData(data = {}) {
     // Default options are marked with *
     const response = await fetch('https://mona-health.be', {
@@ -160,7 +169,11 @@ async function postData(data = {}) {
       },      
       body: JSON.stringify(data) // body data type must match "Content-Type" header
     });
-	console.log(response.status)
+	
+	if (response.status == 400){ 
+		document.getElementById("error").innerHTML = response.json()['message'];
+		document.getElementById("error").style.display = "block";		
+	}	
 
     return response.json();
     // console.log(jsonResp)
