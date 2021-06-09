@@ -136,8 +136,18 @@ async function predBtn() {
     }
     	
 	let [data1, data2] = await Promise.all([postData(_data), postData(_data2)]);	
-	console.log(data1)
 	
+	if(data1.hasOwnProperty('message')){
+		document.getElementById("error1").innerHTML = data1.message;
+		document.getElementById("error1").style.display = "block";
+	}
+	
+	if(data2.hasOwnProperty('message')){
+		document.getElementById("error2").innerHTML = data2.message;
+		document.getElementById("error2").style.display = "block";
+	}
+		
+		
 	showResults(data1, data2);
 
 //     fetch('https://doynj7ndmjy4ibntttu3zuhcji.apigateway.eu-frankfurt-1.oci.customer-oci.com/demo/pred', {
@@ -170,16 +180,15 @@ async function postData(data = {}) {
       body: JSON.stringify(data) // body data type must match "Content-Type" header
     });
 	
-	var respJson = response.json();
+	var respJson = 
 	console.log(respJson);
 	
 	if (response.status == 400){ 
-		document.getElementById("error").innerHTML = respJson.message;
-		document.getElementById("error").style.display = "block";	
+		
 		stopLoad();
 	}	
 
-    return respJson;
+    return response.json();
     // console.log(jsonResp)
     // document.getElementById("prediction").innerHTML = "Prediction: " + jsonResp['prediction'].toString() + "</b>";
 }
