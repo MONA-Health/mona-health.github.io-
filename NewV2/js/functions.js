@@ -170,12 +170,15 @@ async function postData(data = {}) {
       body: JSON.stringify(data) // body data type must match "Content-Type" header
     });
 	
+	var respJson = response.json()
+	
 	if (response.status == 400){ 
-		document.getElementById("error").innerHTML = response.json()['message'];
-		document.getElementById("error").style.display = "block";		
+		document.getElementById("error").innerHTML = respJson['message'];
+		document.getElementById("error").style.display = "block";	
+		stopLoad();
 	}	
 
-    return response.json();
+    return respJson;
     // console.log(jsonResp)
     // document.getElementById("prediction").innerHTML = "Prediction: " + jsonResp['prediction'].toString() + "</b>";
 }
