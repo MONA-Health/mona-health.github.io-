@@ -174,7 +174,7 @@ async function postData(data = {}) {
 	console.log(respJson);
 	
 	if (response.status == 400){ 
-		document.getElementById("error").innerHTML = respJson['message'].message;
+		document.getElementById("error").innerHTML = respJson.message;
 		document.getElementById("error").style.display = "block";	
 		stopLoad();
 	}	
