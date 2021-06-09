@@ -160,6 +160,7 @@ async function postData(data = {}) {
       },      
       body: JSON.stringify(data) // body data type must match "Content-Type" header
     });
+	console.log(response.status)
 
     return response.json();
     // console.log(jsonResp)
