@@ -180,14 +180,6 @@ async function postData(data = {}) {
       body: JSON.stringify(data) // body data type must match "Content-Type" header
     });
 	
-	var respJson = 
-	console.log(respJson);
-	
-	if (response.status == 400){ 
-		
-		stopLoad();
-	}	
-
     return response.json();
     // console.log(jsonResp)
     // document.getElementById("prediction").innerHTML = "Prediction: " + jsonResp['prediction'].toString() + "</b>";
