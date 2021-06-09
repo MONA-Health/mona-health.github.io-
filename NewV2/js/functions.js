@@ -138,12 +138,12 @@ async function predBtn() {
 	let [data1, data2] = await Promise.all([postData(_data), postData(_data2)]);	
 	
 	if(data1.hasOwnProperty('message')){
-		document.getElementById("error1").innerHTML = data1.message;
+		document.getElementById("error1").innerHTML = 'Error left:' + data1.message;
 		document.getElementById("error1").style.display = "block";
 	}
 	
 	if(data2.hasOwnProperty('message')){
-		document.getElementById("error2").innerHTML = data2.message;
+		document.getElementById("error2").innerHTML = 'Error right:' + data2.message;
 		document.getElementById("error2").style.display = "block";
 	}
 		
