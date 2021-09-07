@@ -174,7 +174,7 @@ async function postData(data = {}) {
     const response = await fetch('https://mona-health.be', {
       method: 'POST', 
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'text/plain'
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },      
       body: JSON.stringify(data) // body data type must match "Content-Type" header
