@@ -46,8 +46,11 @@ async function btnTest() {
 	var dimensions2 = await getImageDimensions(im2);
 	doc.addImage(im1,27,330,350,Math.floor(350/dimensions1.w*dimensions1.h));
 	doc.addImage(im2,416,330,350,Math.floor(350/dimensions2.w*dimensions2.h));
-	doc.setFontSize(20);
+	doc.setFontSize(14);
 	doc.setTextColor(0,0,0);
+	doc.text('Left:',27,320);
+	doc.text('Right:',416,320);
+	doc.setFontSize(20);
 	doc.text('Name: ' + document.getElementById("name").value,46,274)
 	doc.text('DR Scale:',46,640)
 	doc.text(document.getElementById("DRTitle").textContent,46,770+45)
