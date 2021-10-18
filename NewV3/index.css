@@ -153,6 +153,10 @@ body {
   text-align: center;
 }
 
+.pdf:hover {
+  background:#232f52;
+}
+
 .border {
     border-radius: 25px;
     border: 2px solid white;

@@ -33,13 +33,13 @@ async function btnTest() {
 	var x2 = 446 - (scale*30/2) + parseFloat(document.getElementById("sliderControlR").style.left)/95.0 * (347-56);
 	if (isNaN(x1)) {x1 = 56 - (scale*30/2) + 0/95.0 * (347-56);};
 	if (isNaN(x2)) {x2 = 446 - (scale*30/2) + 0/95.0 * (347-56);};
-	doc.addImage(marker,'PNG',Math.floor(x1),625+45,Math.floor(scale*30),Math.floor(scale*40),'marker1'); //Min = 91, max = 328
-	doc.addImage(marker,'PNG',Math.floor(x2),625+45,Math.floor(scale*30),Math.floor(scale*40),'marker2');
+	doc.addImage(marker,'PNG',Math.floor(x1),625+47,Math.floor(scale*30),Math.floor(scale*40),'marker1'); //Min = 91, max = 328
+	doc.addImage(marker,'PNG',Math.floor(x2),625+47,Math.floor(scale*30),Math.floor(scale*40),'marker2');
 	doc.setFont("helvetica");
 	doc.setFontSize(15);
 	doc.setTextColor(255,255,255);
-	doc.text(document.getElementById("sliderTxtL").innerText,Math.floor(x1) + 4,642+45)
-	doc.text(document.getElementById("sliderTxtR").innerText,Math.floor(x2) + 4,642+45)
+	doc.text(document.getElementById("sliderTxtL").innerText,Math.floor(x1) + 4,642+47)
+	doc.text(document.getElementById("sliderTxtR").innerText,Math.floor(x2) + 4,642+47)
 	const im1 = document.getElementById("test-image-1").src;
 	var dimensions1 = await getImageDimensions(im1);
 	const im2 = document.getElementById("test-image-2").src;
