@@ -130,12 +130,41 @@ body {
   font-weight: 700;
 }
 
+.text-block-11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
 .text-block-3 {
   margin-top: 18px;
   color: #fff;
   font-size: 13px;
   line-height: 18px;
   text-align: center;
+}
+
+.border {
+    border-radius: 25px;
+    border: 3px solid white;
+    padding: 20px; 
+    width: 250px;
+    height: 15px;  
+    background: #e53054;  /*1c2541   e53054*/
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 0.6; /* Firefox */
 }
 
 .text-block-3-copy {
